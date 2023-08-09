@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-US"> 
+<head> 
+  <link rel="stylesheet" href="number3.css">
+  <title>Image Gallery</title> 
+</head> 
+<body> 
+  <div class="intro"> 
+    <h2>Image Gallery of cartoon</h2> 
+    <p style="background-color: blue;">Select a thumbnail below to view the cartoon image image</p> 
+  </div> 
+  <div id="image-gallery">
+    <img id="current-image" src="1.jpg" alt="Image 1">
+    <div id="image-thumbs">
+      <img class="thumb" src="cartoon.jpg" alt="Cartoon 1" height="200px" width="500px">
+      <img class="thumb" src="jerry.png" alt="Cartoon 2"  height="200px" width="500px">
+      <img class="thumb" src="Mickey-Mouse.jpg" alt="Cartoon 3"  height="200px" width="500px">
+      <img class="thumb" src="2.jpg" alt="Cartoon 4"  height="200px" width="500px">
+      <img class="thumb" src="snow-white.jpg" alt="Cartoon 5"  height="200px" width="500px">
+
+      <!-- Add more thumbnail images here -->
+    </div>
+  </div>
+
+  <script>
+    var imageThumbs = document.querySelectorAll(".thumb");
+    var currentImage = document.getElementById("current-image");
+
+    imageThumbs.forEach(function(thumb) {
+      thumb.addEventListener("click", function() {
+        currentImage.src = thumb.src;
+        currentImage.alt = thumb.alt;
+      });
+    });
+  </script>
+</body>
+</html>
